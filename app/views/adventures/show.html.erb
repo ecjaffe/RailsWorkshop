@@ -1,6 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<div class="row">
+	<div class="col-md-9">
+		<%= image_tag(@adventure.picture_url, width: '100%') if @adventure.picture.present? %>
+	</div>
+
+	<div class="col-md-3">
+		<p><b>Name: </b><%= @adventure.name %></p>
+		<p><b>Description: </b><%= @adventure.description %></p>
+		<p>
+			<%= link_to 'Edit', edit_adventure_path(@adventure) %> |
+			<%= link_to 'Destory', @adventure, data: { confirm: 'Are you sure?' }, method: :delete %>
+			<%= link_to 'Back', adventures_path %>
+		</p>
+	</div>
+</div>
+
+<!-- <p>
   <strong>Name:</strong>
   <%= @adventure.name %>
 </p>
@@ -22,3 +38,4 @@
 
 <%= link_to 'Edit', edit_adventure_path(@adventure) %> |
 <%= link_to 'Back', adventures_path %>
+ -->
